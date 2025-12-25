@@ -1,9 +1,16 @@
 # DelphiVersions
+
 A Delphi Include file of Delphi version compiler directives
 
-Support for Delphi 2007 - Delphi 13
+Canonical [Source](https://github.com/novuslogic/DelphiVersions) | View [DelphiVersions.inc](https://github.com/jimmckeeth/DelphiVersions/blob/master/DelphiVersions.inc) | DocWiki on [Compiler Versions](https://docwiki.embarcadero.com/RADStudio/en/Compiler_Versions)
 
-[https://docwiki.embarcadero.com/RADStudio/Florence/en/Compiler_Versions](https://docwiki.embarcadero.com/RADStudio/Florence/en/Compiler_Versions)
+## Including in Your Project
+
+You can use Git's submodule support to include the latest `DelphiVersions.inc` automatically in your project. 
+
+## Version Support
+
+Delphi **2007** through Delphi **13** *Florence*
 
 ## Directivies
 
