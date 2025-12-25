@@ -59,5 +59,5 @@ echo [INFO] Updating %FOLDER_NAME%...
 git submodule update --remote --merge %FOLDER_NAME%
 
 echo.
-echo [SUCCESS] THe %FOLDER_NAME% foloder contains the latest DelphiVersions.inc
+echo [SUCCESS] The %FOLDER_NAME% folder contains the latest DelphiVersions.inc
 timeout /t 10 
