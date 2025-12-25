@@ -10,6 +10,8 @@ You can use Git's submodule support to include the latest `DelphiVersions.inc` a
 
 There is a [polygot script](https://github.com/jimmckeeth/DelphiVersions/blob/master/update_delphiversions.cmd) that *should* work in PowerShell, CMD, & Bash to add it as a submodule and do a sparse checkout, and running it later will update to the latest version. Or you can do it manually. 
 
+**Note:** The `sparse-checkout` command requires Git 2.25 or later (released in 2020).
+
 In your repo, run the following git commands:
 
 ```cmd
