@@ -1,28 +1,49 @@
-# DelphiVersions
+# Delphi Versions Include File
 
-A Delphi include file of Delphi version compiler directives
+A Delphi [include file](https://docwiki.embarcadero.com/RADStudio/en/Include_file_(Delphi)) of Delphi version [compiler directives](https://docwiki.embarcadero.com/RADStudio/en/Delphi_Compiler_Directives_(List)_Index) to simplify [conditional compilation](https://docwiki.embarcadero.com/RADStudio/en/Conditional_compilation_(Delphi)) based on [compiler version](https://docwiki.embarcadero.com/RADStudio/en/Conditional_compilation_(Delphi)).
 
-Canonical [Source](https://github.com/novuslogic/DelphiVersions) | View [DelphiVersions.inc](https://github.com/jimmckeeth/DelphiVersions/blob/master/DelphiVersions.inc) | DocWiki on [Compiler Versions](https://docwiki.embarcadero.com/RADStudio/en/Compiler_Versions)
+> Canonical [Source](https://github.com/novuslogic/DelphiVersions) | View [DelphiVersions.inc](https://github.com/jimmckeeth/DelphiVersions/blob/master/DelphiVersions.inc) | Get the [installer](https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/refs/heads/master/update_delphiversions.cmd) 
+
+Supporting from Delphi **2007** through Delphi **13** *Florence*.
 
 ## Including in Your Project
 
-You can use Git's submodule support to include the latest `DelphiVersions.inc` automatically in your project. 
+You can use [Git's submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) support to include the latest `DelphiVersions.inc` automatically in your project's Git repo (it doesn't even need to be on GitHub).
 
-There is a [polygot script](https://github.com/jimmckeeth/DelphiVersions/blob/master/update_delphiversions.cmd) that *should* work in PowerShell, CMD, & Bash to add it as a submodule and do a sparse checkout, and running it later will update to the latest version. Or you can do it manually. 
+### Scripted Install
 
-**Note:** The `sparse-checkout` command requires Git 2.25 or later (released in 2020).
+There is a [polygot script](https://github.com/jimmckeeth/DelphiVersions/blob/master/update_delphiversions.cmd) that *should* work in PowerShell, CMD, & Bash to add it as a submodule, and running it later will update to the latest version. 
 
-In your repo, run the following git commands:
+In a hurry? You can use the following one-liner to install it. Just run this from a terminal in your repository (`curl` is available on Windows 10 an newer, and most all Linux distros.)
+
+From a **Command Prompt** (not PowerShell)
+
+```cmd
+curl -LO "https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd" && update_delphiversions.cmd
+```
+
+From **PowerShell** terminal (not *CMD.exe*)
+
+```pwsh
+iwr -useb 'https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd' -OutFile 'update_delphiversions.cmd'; ./update_delphiversions.cmd
+```
+
+From Bash / WSL / Git Bash
+
+```bash
+curl -O https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd && sh update_delphiversions.cmd
+```
+
+### Manual Install
+
+If you want to install it manually, run the following git commands in your repo:
 
 ```cmd
 git submodule add https://github.com/jimmckeeth/DelphiVersions.git DelphiVersions
-cd DelphiVersions
-git sparse-checkout set DelphiVersions.inc update_delphiversions.cmd
-cd ..
 git submodule update --remote --merge DelphiVersions
 ```
 
-And then in the future when you want to update DelphiVersions just repeat the last line
+And then in the when you want to update `DelphiVersions.inc` just repeat the last line
 
 ```cmd
 git submodule update --remote --merge DelphiVersions
@@ -30,11 +51,18 @@ git submodule update --remote --merge DelphiVersions
 
 or just run [`update_delphiversions.cmd`](https://github.com/jimmckeeth/DelphiVersions/blob/master/update_delphiversions.cmd) again.
 
-## Version Support
+## Directivies & Usage
 
-Delphi **2007** through Delphi **13** *Florence*
+If your code requires a feature introduced in Delphi 10.0 then you would use
 
-## Directivies
+```delphi
+{$I DelphiVersions\DelphiVersions.inc}
+
+{$IFDEF DELPHI10_UP}
+// Your fancy code
+{$ENDIF}
+```
+
 
 | Directivies     | Description                                                |
 | --------------- | ---------------------------------------------------------- |

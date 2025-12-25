@@ -14,7 +14,6 @@ GOTO :CMDSCRIPT
 
 REPO_URL="https://github.com/jimmckeeth/DelphiVersions.git"
 FOLDER="DelphiVersions"
-FILES_TO_KEEP="DelphiVersions.inc update_delphiversions.cmd"
 
 echo "--- [Bash] Checking for $FOLDER submodule ---"
 
@@ -24,20 +23,13 @@ else
     echo "[INFO] Initializing new submodule..."
     # Add submodule
     git submodule add "$REPO_URL" "$FOLDER" || { echo "[ERROR] Failed to add submodule"; exit 1; }
-    
-    # Configure Sparse Checkout
-    echo "[INFO] Configuring sparse checkout..."
-    cd "$FOLDER" || exit
-    git sparse-checkout init --cone
-    git sparse-checkout set $FILES_TO_KEEP
-    cd ..
 fi
 
 echo "[INFO] Updating $FOLDER..."
 git submodule update --remote --merge "$FOLDER"
 
 echo ""
-echo "[SUCCESS] $FOLDER contains the latest $FILES_TO_KEEP."
+echo "[SUCCESS] $FOLDER contains the latest DelphiVersions.inc
 exit 0
 
 :CMDSCRIPT
@@ -48,7 +40,6 @@ exit 0
 setlocal
 set "REPO_URL=https://github.com/jimmckeeth/DelphiVersions.git"
 set "FOLDER_NAME=DelphiVersions"
-set "FILES_TO_KEEP=DelphiVersions.inc update_delphiversions.cmd"
 
 echo --- [CMD] Checking for %FOLDER_NAME% submodule ---
 
@@ -62,17 +53,11 @@ IF EXIST "%FOLDER_NAME%\.git" (
         pause
         exit /b 1
     )
-    
-    echo [INFO] Configuring sparse checkout...
-    pushd %FOLDER_NAME%
-    git sparse-checkout init --cone
-    git sparse-checkout set %FILES_TO_KEEP%
-    popd
 )
 
 echo [INFO] Updating %FOLDER_NAME%...
 git submodule update --remote --merge %FOLDER_NAME%
 
 echo.
-echo [SUCCESS] %FOLDER_NAME% contains the latest %FILES_TO_KEEP%.
+echo [SUCCESS] %FOLDER_NAME% contains the latest DelphiVersions.inc
 pause
