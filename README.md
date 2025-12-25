@@ -48,6 +48,18 @@ git submodule update --remote --merge DelphiVersions
 
 or just run [`update_delphiversions.cmd`](https://github.com/jimmckeeth/DelphiVersions/blob/master/update_delphiversions.cmd) again.
 
+### Troubleshooting
+
+Git submodules are configured through the `.gitmodules` file in the root of your respository. After the above steps it should look something like:
+
+```ini
+[submodule "DelphiVersions"]
+        path = DelphiVersions
+        url = https://github.com/jimmckeeth/DelphiVersions.git
+```
+
+If you have trouble you can remove those lines and delete the folder and try again. Or [read the docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+
 ## Directivies & Usage
 
 If your code requires a feature introduced in Delphi 10.0 then you would use
@@ -60,6 +72,7 @@ If your code requires a feature introduced in Delphi 10.0 then you would use
 {$ENDIF}
 ```
 
+Here is a list of directives defined:
 
 | Directivies     | Description                                                |
 | --------------- | ---------------------------------------------------------- |
