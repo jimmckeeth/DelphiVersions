@@ -29,7 +29,7 @@ echo "[INFO] Updating $FOLDER..."
 git submodule update --remote --merge "$FOLDER"
 
 echo ""
-echo "[SUCCESS] $FOLDER contains the latest DelphiVersions.inc
+echo "[SUCCESS] The $FOLDER folder contains the latest DelphiVersions.inc
 exit 0
 
 :CMDSCRIPT
@@ -59,5 +59,5 @@ echo [INFO] Updating %FOLDER_NAME%...
 git submodule update --remote --merge %FOLDER_NAME%
 
 echo.
-echo [SUCCESS] %FOLDER_NAME% contains the latest DelphiVersions.inc
-pause
+echo [SUCCESS] THe %FOLDER_NAME% foloder contains the latest DelphiVersions.inc
+timeout /t 10 

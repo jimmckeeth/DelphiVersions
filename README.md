@@ -1,10 +1,7 @@
 # Delphi Versions Include File
 
 A Delphi [include file](https://docwiki.embarcadero.com/RADStudio/en/Include_file_(Delphi)) of Delphi version [compiler directives](https://docwiki.embarcadero.com/RADStudio/en/Delphi_Compiler_Directives_(List)_Index) to simplify [conditional compilation](https://docwiki.embarcadero.com/RADStudio/en/Conditional_compilation_(Delphi)) based on [compiler version](https://docwiki.embarcadero.com/RADStudio/en/Conditional_compilation_(Delphi)).
-
-> Canonical [Source](https://github.com/novuslogic/DelphiVersions) | View [DelphiVersions.inc](https://github.com/jimmckeeth/DelphiVersions/blob/master/DelphiVersions.inc) | Get the [installer](https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/refs/heads/master/update_delphiversions.cmd) 
-
-Supporting from Delphi **2007** through Delphi **13** *Florence*.
+Supporting from **Delphi 2007** through **Delphi 13 *Florence***.
 
 ## Including in Your Project
 
@@ -19,19 +16,19 @@ In a hurry? You can use the following one-liner to install it. Just run this fro
 From a **Command Prompt** (not PowerShell)
 
 ```cmd
-curl -LO "https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd" && update_delphiversions.cmd
+curl -LO "https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd" && update_delphiversions.cmd && del update_delphiversions.cmd
 ```
 
 From **PowerShell** terminal (not *CMD.exe*)
 
 ```pwsh
-iwr -useb 'https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd' -OutFile 'update_delphiversions.cmd'; ./update_delphiversions.cmd
+iwr -useb 'https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd' -OutFile 'update_delphiversions.cmd'; ./update_delphiversions.cmd; rm update_delphiversions.cmd
 ```
 
-From Bash / WSL / Git Bash
+From **Bash** / WSL / Git Bash
 
 ```bash
-curl -O https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd && sh update_delphiversions.cmd
+curl -fsSL https://raw.githubusercontent.com/jimmckeeth/DelphiVersions/master/update_delphiversions.cmd | sh
 ```
 
 ### Manual Install
